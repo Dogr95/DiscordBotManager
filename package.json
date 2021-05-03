@@ -1,0 +1,21 @@
+{
+  "name": "discordbotmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "vertiKarl",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.6"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "discord.js": "^12.5.3",
+    "install": "^0.13.0",
+    "npm": "^7.11.2"
+  }
+}

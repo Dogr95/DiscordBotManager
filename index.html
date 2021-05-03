@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discord Bot Manager</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            let client;
+
+            window.onload = () => {
+                return;
+                document.getElementById("login").addEventListener("submit", function(event){
+                    login();
+                    event.preventDefault();
+                    //console.log(document.getElementsByName("val")[0])
+                    //ipcRenderer.send("asynchronous-message", "test")
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="notice" style="visibility: hidden;">
+            <div id="content">
+                <h1 id="title">Test</h1>
+                <p id="description">notice</p>
+                <button onclick="this.parentNode.parentNode.style.visibility = 'hidden'">OK</button>
+            </div>
+        </div>
+        <h1>welcome</h1>
+        <form id="login">
+            Please token: <input id="token" type="password">
+        </form>
+    </body>
+</html>
