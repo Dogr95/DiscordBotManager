@@ -44,6 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
         client.on("ready", () => {
+            document.getElementById("welcome").innerHTML = "Welcome, " + client.user.tag + "!";
             notice("Success", "Logged in as "+client.user.tag);
             init();
             const guilds = document.getElementById("Guilds")
@@ -139,8 +140,17 @@ window.addEventListener('DOMContentLoaded', () => {
                 container.append(header);
                 container.append(body);
 
-                const author = document.createElement("h1");
-                author.innerHTML = message.author.username + "#" + message.author.discriminator
+                const pb = document.createElement("img");
+                pb.style.height = "5vh";
+                pb.style["border-radius"] = "2rem";
+                pb.src = message.author.avatarURL();
+
+                const author = document.createElement("div");
+                author.style.display = "flex";
+                author.append(pb)
+                const name = document.createElement("h1");
+                name.innerHTML = message.author.username + "#" + message.author.discriminator
+                author.append(name)
                 header.append(author)
 
                 const date = document.createElement("h2");
