@@ -7,14 +7,16 @@
             let client;
 
             window.onload = () => {
-                return;
-                document.getElementById("login").addEventListener("submit", function(event){
-                    login();
-                    event.preventDefault();
-                    //console.log(document.getElementsByName("val")[0])
-                    //ipcRenderer.send("asynchronous-message", "test")
-                });
+                // startup
             }
+
+            function toggleNotice() {
+                const main = document.getElementsByTagName("main")[0]
+                main.style.filter = "";
+                main.style.zIndex = 0;
+                document.getElementById("notice").style.visibility = 'hidden';
+            }
+
         </script>
     </head>
     <body>
@@ -22,12 +24,14 @@
             <div id="content">
                 <h1 id="title">Test</h1>
                 <p id="description">notice</p>
-                <button onclick="this.parentNode.parentNode.style.visibility = 'hidden'">OK</button>
+                <button onclick="toggleNotice()">OK</button>
             </div>
         </div>
-        <h1 id="welcome">Please login</h1>
-        <form id="login">
-            Token: <input id="token" type="password">
-        </form>
+        <main>
+            <h1 style="text-align: center;" id="welcome">Please login</h1>
+            <form id="login">
+                Token: <input id="token" type="password">
+            </form>
+        </main>
     </body>
 </html>
